@@ -1,0 +1,24 @@
+[project]
+name = "pharma-papers"
+version = "0.1.0"
+description = "Fetch PubMed papers with pharma/biotech affiliations"
+authors = [
+    {name = "Harish",email = "dhengareharry@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+"biopython>=1.83",
+"requests>=2.31.0"
+]
+
+[tool.poetry]
+packages = [{include = "pharma_papers", from = "src"}]
+
+[tool.poetry.scripts]
+get-papers-list = "pharma_papers.cli:main"
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
